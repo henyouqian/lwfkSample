@@ -1,0 +1,27 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+.DS_Store
+
+empty/build/android/bin/*
+empty/build/android/gen/*
+empty/build/android/obj/*
+empty/build/android/lib/*
+
+sliders/build/android/bin/*
+sliders/build/android/gen/*
+sliders/build/android/obj/*
+sliders/build/android/lib/*
+
+sliders/build/android/assets/*

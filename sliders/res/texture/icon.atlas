@@ -1,0 +1,9 @@
+<images>
+	<image name="cirrus-64.png" file="icon-0.png" x="0" y ="0" w="64" h="64" />
+	<image name="delta-64.png" file="icon-0.png" x="65" y ="0" w="64" h="64" />
+	<image name="jcb-64.png" file="icon-0.png" x="130" y ="0" w="64" h="64" />
+	<image name="mastercard-64.png" file="icon-0.png" x="0" y ="65" w="64" h="64" />
+	<image name="paypal-64.png" file="icon-0.png" x="65" y ="65" w="64" h="64" />
+	<image name="visa-64.png" file="icon-0.png" x="130" y ="65" w="64" h="64" />
+	<image name="visa-electron-64.png" file="icon-0.png" x="0" y ="130" w="64" h="64" />
+</images>
