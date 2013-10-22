@@ -30,16 +30,16 @@ void TitleTask::vStart() {
     _pSound2 = lw::Sound::create("b.wav");
     
     
-    lw::ButtonDefAtlas def;
+    lw::SpriteButtonDef def;
     def.callback = this;
-    def.atlasNormal = "cirrus-64.png";
-    def.atlasDown = "delta-64.png";
-    def.atlasDisable = "jcb-64.png";
+    def.sptNormal = "cirrus-64.png";
+    def.sptDown = "delta-64.png";
+    def.sptDisable = "jcb-64.png";
     def.x = 100;
     def.y = 100;
     def.overrideW = def.overrideH = 300;
     
-    _pBtn = new lw::Button(def);
+    _pBtn = lw::Button::create(def);
     
     glClearColor(0.31f, 0.69f, 0.61f, 1.0f);
 }
