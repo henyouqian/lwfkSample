@@ -15,5 +15,13 @@
 #ifdef __cplusplus
     #include "lwfk/lwPrefix.h"
     #include <unistd.h>
+
+    #include "lwfk/lwlog.h"
+    #include "lwfk/lwTexture.h"
+    #include "lwfk/lwSprite.h"
+    #include "lwfk/lwRenderState.h"
+    #include "lwfk/lwSound.h"
+    #include "lwfk/lwText.h"
+    #include "lwfk/lwApp.h"
 #endif
 

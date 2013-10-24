@@ -9,7 +9,8 @@ LOCAL_MODULE    := Sliders
 
 ### Add all source file names to be included in lib separated by a whitespace
 LOCAL_SRC_FILES :=  $(LOCAL_DIR)/src/app.cpp \
-				   	$(LOCAL_DIR)/src/task/titleTask.cpp
+				   	$(LOCAL_DIR)/src/task/titleTask.cpp \
+				   	$(LOCAL_DIR)/src/task/sliderTask.cpp
 
 LOCAL_C_INCLUDES :=	$(LWFK_DIR)/libraries/PVR/Shell	\
 				    $(LWFK_DIR)/libraries/PVR/Shell/API/KEGL	\

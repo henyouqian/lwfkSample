@@ -25,6 +25,8 @@
 		B3527D2C18156DF500034DAB /* icon-0.png in Resources */ = {isa = PBXBuildFile; fileRef = B3527D2A18156DF500034DAB /* icon-0.png */; };
 		B3527D2D18156DF500034DAB /* icon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B3527D2B18156DF500034DAB /* icon.atlas */; };
 		B3527D361815971100034DAB /* button.wav in Resources */ = {isa = PBXBuildFile; fileRef = B3527D351815971100034DAB /* button.wav */; };
+		B3527D3F1816C0B400034DAB /* sliderTask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3527D3D1816C0B400034DAB /* sliderTask.cpp */; };
+		B3527D411816C2C800034DAB /* img180.JPG in Resources */ = {isa = PBXBuildFile; fileRef = B3527D401816C2C800034DAB /* img180.JPG */; };
 		B3F513851770D20D00C92D76 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F513841770D20D00C92D76 /* QuartzCore.framework */; };
 		B3F760B21759E2DE00DE9BBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F760B11759E2DE00DE9BBF /* UIKit.framework */; };
 		B3F760B41759E2DE00DE9BBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3F760B31759E2DE00DE9BBF /* Foundation.framework */; };
@@ -72,6 +74,9 @@
 		B3527D2A18156DF500034DAB /* icon-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-0.png"; sourceTree = "<group>"; };
 		B3527D2B18156DF500034DAB /* icon.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = icon.atlas; sourceTree = "<group>"; };
 		B3527D351815971100034DAB /* button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button.wav; sourceTree = "<group>"; };
+		B3527D3D1816C0B400034DAB /* sliderTask.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sliderTask.cpp; sourceTree = "<group>"; };
+		B3527D3E1816C0B400034DAB /* sliderTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sliderTask.h; sourceTree = "<group>"; };
+		B3527D401816C2C800034DAB /* img180.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img180.JPG; sourceTree = "<group>"; };
 		B3F513841770D20D00C92D76 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B3F760AE1759E2DE00DE9BBF /* sliders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sliders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F760B11759E2DE00DE9BBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -113,6 +118,8 @@
 		B323A0D91805027E0035A1C2 /* task */ = {
 			isa = PBXGroup;
 			children = (
+				B3527D3D1816C0B400034DAB /* sliderTask.cpp */,
+				B3527D3E1816C0B400034DAB /* sliderTask.h */,
 				B323A0DE1805027E0035A1C2 /* titleTask.cpp */,
 				B323A0DF1805027E0035A1C2 /* titleTask.h */,
 			);
@@ -167,6 +174,7 @@
 		B323A105180502A30035A1C2 /* texture */ = {
 			isa = PBXGroup;
 			children = (
+				B3527D401816C2C800034DAB /* img180.JPG */,
 				B3527D2A18156DF500034DAB /* icon-0.png */,
 				B3527D2B18156DF500034DAB /* icon.atlas */,
 				B323A108180502A30035A1C2 /* title.png */,
@@ -289,6 +297,7 @@
 				B3527D361815971100034DAB /* button.wav in Resources */,
 				B323A0F9180502940035A1C2 /* ViewController_iPad.xib in Resources */,
 				B323A0F6180502940035A1C2 /* Default@2x.png in Resources */,
+				B3527D411816C2C800034DAB /* img180.JPG in Resources */,
 				B323A11B180502A30035A1C2 /* default.wav in Resources */,
 				B323A0F4180502940035A1C2 /* Default-568h@2x.png in Resources */,
 				B3527D2D18156DF500034DAB /* icon.atlas in Resources */,
@@ -310,6 +319,7 @@
 				B323A0E31805027E0035A1C2 /* titleTask.cpp in Sources */,
 				B323A0FB180502940035A1C2 /* main.m in Sources */,
 				B323A0F3180502940035A1C2 /* AppController.mm in Sources */,
+				B3527D3F1816C0B400034DAB /* sliderTask.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +438,7 @@
 					"../../../../lwfk/libraries/PVR/Shell/**",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = sliders;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,7 +464,7 @@
 					"../../../../lwfk/libraries/PVR/Shell/**",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = sliders;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
