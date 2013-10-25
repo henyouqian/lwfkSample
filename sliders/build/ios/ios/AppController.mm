@@ -254,14 +254,25 @@ const int kFPS = 60.0;
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    [_renderTimer invalidate];
-    _renderTimer = nil;
-    glFinish();
+    if (_renderTimer != nil) {
+        [_renderTimer invalidate];
+        _renderTimer = nil;
+        glFinish();
+    }
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    if (_renderTimer == nil) {
+        _renderTimer = [NSTimer scheduledTimerWithTimeInterval:(1.0 / kFPS) target:self selector:@selector(_renderGLScene) userInfo:nil repeats:YES];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    _renderTimer = [NSTimer scheduledTimerWithTimeInterval:(1.0 / kFPS) target:self selector:@selector(_renderGLScene) userInfo:nil repeats:YES];
+    if (_renderTimer == nil) {
+        _renderTimer = [NSTimer scheduledTimerWithTimeInterval:(1.0 / kFPS) target:self selector:@selector(_renderGLScene) userInfo:nil repeats:YES];
+    }
 }
 
 // throws up a warning dialog
