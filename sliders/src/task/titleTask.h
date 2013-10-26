@@ -33,6 +33,8 @@ private:
     lw::Sound *_pSound;
     lw::Sound *_pSound2;
     lw::Button *_pBtn;
+    lw::SpriteNode *_pSptNode;
+    lw::SpriteNode *_pSptNode2;
 };
 
 extern TitleTask gTitleTask;
