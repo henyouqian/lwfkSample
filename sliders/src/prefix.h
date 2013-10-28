@@ -23,6 +23,8 @@
     #include "lwfk/lwSound.h"
     #include "lwfk/lwText.h"
     #include "lwfk/lwApp.h"
+    #include "lwfk/node/lwSceneNode.h"
     #include "lwfk/node/lwSpriteNode.h"
+    #include "lwfk/UI/lwButton.h"
 #endif
 

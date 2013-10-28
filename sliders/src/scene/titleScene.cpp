@@ -1,26 +1,26 @@
 #include "prefix.h"
-#include "titleTask.h"
-#include "sliderTask.h"
+#include "titleScene.h"
+#include "sliderScene.h"
 
 
-TitleTask gTitleTask;
+TitleScene gTitleScene;
 
 
-TitleTask::TitleTask() {
-    lwinfo("TitleTask::TitleTask()");
+TitleScene::TitleScene() {
+    lwinfo("TitleScene::TitleScene()");
 }
 
 
-TitleTask::~TitleTask() {
+TitleScene::~TitleScene() {
     
 }
 
-void TitleTask::vStart() {
+void TitleScene::vLoad() {
     lw::Sprite::addAtlas("icon.atlas");
     _pSprite = lw::Sprite::create("cirrus-64.png", "normal");
     
     lw::SpriteNode::addAtlas("icon.atlas");
-    _pSptNode = lw::SpriteNode::create(NULL, "cirrus-64.png", "normal");
+    _pSptNode = lw::SpriteNode::create(this, "cirrus-64.png", "normal");
     _pSptNode->setPivot(32, 32);
     _pSptNode->setPos(100, 100);
     
@@ -33,6 +33,7 @@ void TitleTask::vStart() {
     
     
     lw::SpriteButtonDef def;
+    def.parent = this;
     def.callback = this;
     def.sptNormal = "cirrus-64.png";
     def.sptDown = "delta-64.png";
@@ -42,11 +43,9 @@ void TitleTask::vStart() {
     def.overrideW = def.overrideH = 300;
     
     _pBtn = lw::Button::create(def);
-    
-    glClearColor(0.31f, 0.69f, 0.61f, 1.0f);
 }
 
-void TitleTask::vStop() {
+void TitleScene::vUnload() {
     delete _pSprite;
     delete _pSptNode;
     delete _pSound;
@@ -54,8 +53,11 @@ void TitleTask::vStop() {
     delete _pBtn;
 }
 
+void TitleScene::vEnter() {
+    glClearColor(0.31f, 0.69f, 0.61f, 1.0f);
+}
 
-void TitleTask::vUpdate() {
+void TitleScene::vUpdate() {
     _pBtn->update();
     
     static float rot = 0.f;
@@ -68,44 +70,17 @@ void TitleTask::vUpdate() {
     _pSptNode->update();
 }
 
-
-void TitleTask::vDraw() {
-    //_pSprite->draw();
-    _pSptNode->draw();
-    //_pBtn->draw();
+bool TitleScene::vTouchBegan(const lw::Touch &touch) {
+    lw::SceneNode::switchTo(&gSliderScene, false);
+    return false;
 }
 
-void TitleTask::vTouchBegan(const lw::Touch &touch) {
-    //_pSound->play();
-//    if (touch.y < 480) {
-//        _pSound->play();
-//    } else {
-//        _pSound2->play();
-//    }
-    
-    _pBtn->touchBegan(touch);
-}
-
-void TitleTask::vTouchMoved(const lw::Touch &touch) {
-    
-}
-
-void TitleTask::vTouchEnded(const lw::Touch &touch)  {
-    _pBtn->touchEnded(touch);
-}
-
-void TitleTask::vTouchCanceled(const lw::Touch &touch)  {
-    _pBtn->touchCanceled(touch);
-}
-
-void TitleTask::vDown(lw::Button* pButton) {
+void TitleScene::vDown(lw::Button* pButton) {
     _pSound->play();
 }
 
-void TitleTask::vClick(lw::Button* pButton) {
+void TitleScene::vClick(lw::Button* pButton) {
     _pSound2->play();
-    this->stop();
-    gSliderTask.start();
 }
 
 
